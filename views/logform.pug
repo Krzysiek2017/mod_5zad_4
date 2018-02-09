@@ -1,0 +1,17 @@
+﻿doctype html
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		title Log in
+	body
+		form(action='http://localhost:3000/userform', method='GET')
+			p
+				| Imię:	
+				br
+				input(type='text', name='imię')
+			p
+				| Nazwisko: 
+				br
+				input(type='text', name='nazwisko')
+			button(type='submit')
+				a(href="content") Zaloguj się
