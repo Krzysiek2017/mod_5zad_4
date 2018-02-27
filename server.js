@@ -1,4 +1,5 @@
 ﻿var express = require("express");
+var bodyParser = require('body-parser');
 var app = express();
 
 app.use(express.static("assets"));
@@ -10,12 +11,12 @@ app.get("/", function(req, res) {
   res.render("home");
 });
 
-app.get("/logform", function(req, res) {
+app.get("/auth/google", function(req, res) {
   res.render("logform");
 });
 
 app.get("/content", function(req, res) {
-  res.render("content");
+  res.render("content", {username: req.query.username});
 });
 
 app.listen(3000);
